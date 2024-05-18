@@ -1,0 +1,45 @@
+<p>Click event</p>
+<button type="button" (click)="changeBG($event)" value="white">white</button>
+<button type="button" (click)="changeBG($event)" value="Red">Red</button>
+<button type="button" (click)="changeBG($event)" value="Blue">Blue</button>
+<button type="button" (click)="changeBG($event)" value="Yellow">Yellow</button>
+<button type="button" (click)="changeBG($event)" value="Orange">Orange</button>
+<hr />
+<br />
+a: <input type="text" [(ngModel)]="a" />
+<br />
+b: <input type="text" [(ngModel)]="b" />
+<br />
+<button type="button" (click)="Areas()">Area</button>
+<button type="button" (click)="Perimeters()">Perimeter</button>
+<hr />
+<img
+  src="assets/images/Docker.jpeg"
+  width="100px"
+  height="100px"
+  alt=""
+  (click)="ChangePhoto($event)"
+/>
+<img
+  src="assets/images/Flutter.png"
+  width="100px"
+  height="100px"
+  alt=""
+  (click)="ChangePhoto($event)"
+/>
+<img
+  src="assets/images/postman.jpg"
+  width="100px"
+  height="100px"
+  alt=""
+  (click)="ChangePhoto($event)"
+/>
+
+<hr />
+<br />
+<img src="{{ thumnail }}" width="{{ width }}" height="{{ height }}" alt="" />
+<br />
+<hr />
+<button type="button" value="100x100" (click)="Resize($event)">100x100</button>
+<button type="button" value="200x200" (click)="Resize($event)">200x200</button>
+<button type="button" value="300x300" (click)="Resize($event)">300x300</button>

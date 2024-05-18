@@ -1,0 +1,29 @@
+<h3>Profile Info !</h3>
+
+<hr />
+<table border="1">
+  <thead>
+    <tr>
+      <th>username</th>
+      <th>fullName</th>
+      <th>password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ account.username }}</td>
+      <td>{{ account.fullName }}</td>
+      <td>{{ account.password }}</td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+
+<hr />
+<div>Form Account profile</div>
+<form [formGroup]="ProfileGroup">
+  <input type="text" formControlName="username" />
+  <br />
+
+  <input type="text" formControlName="fullName" />
+</form>

@@ -1,0 +1,51 @@
+<p>demo4 works!</p>
+{{ result1 }}
+<br />
+{{ result2 }}
+<hr />
+@if (prod != null) {
+<h3>Product info</h3>
+ID: {{ prod.id }}
+<br />
+Name: {{ prod.name }}
+<br />
+Price: {{ prod.price }}
+}@else {
+<h4>Not Found</h4>
+}
+
+<hr />
+<h3>List product</h3>
+<h3>Products list</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Photo</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (prod of listProd; track prod.id) {
+    <tr>
+      <td>{{ prod.id }}</td>
+      <td>{{ prod.name }}</td>
+      <td>
+        <img
+          src="assets/images/{{ prod.photo }}"
+          width="100px"
+          height="120px"
+          alt=""
+        />
+      </td>
+      <td>{{ prod.price }}</td>
+      <td>{{ prod.quantity }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+<hr />
+Find product exists: {{ result3 }}

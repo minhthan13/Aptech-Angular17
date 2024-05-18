@@ -1,0 +1,119 @@
+<h2 class="format">demo1 Component!</h2>
+
+<hr />
+id: {{ id }}
+<hr />
+Username : {{ username }}
+<hr />
+status : {{ status ? "show" : "hide" }}
+<hr />
+Phone : {{ phone }}
+<hr />
+price : {{ price }}
+<hr />
+Quantity : {{ quantity }}
+<hr />
+total : {{ price * quantity }}
+<hr />
+<img
+  src="assets/images/{{ photo }}"
+  width="{{ width }}"
+  height="{{ height }}"
+  alt=""
+/>
+
+<hr />
+@if (status) {
+<span style="color: green">Show</span>
+} @else {
+<span style="color: red">Hide</span>
+
+}
+<hr />
+<span>Product info</span>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>{{ product.id }}</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+      <td>photo</td>
+      <td>
+        <img
+          src="assets/images/{{ product.photo }}"
+          width="{{ width }}"
+          height="{{ height }}"
+          alt=""
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>{{ product.price }}</td>
+    </tr>
+    <tr>
+      <td>quantity</td>
+      <td>{{ product.quantity }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<br />
+@if(score >=8){
+<span style="color: blue">A</span>
+}@else if (score >=7) {
+<span style="color: yellow">B</span>
+}@else if (score>=6) {
+<span style="color: orange">C</span>
+
+}@else {
+<span style="color: red">D</span>
+}
+
+<br />
+<h3>loop</h3>
+<ul>
+  @for (name of names; track $index) {
+  <li>{{ $index }} - {{ name }}</li>
+  <span>{{ $first }}</span>
+  }
+</ul>
+
+<br />
+<h3>Products list</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Photo</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (prod of products; track product.id) {
+    <tr>
+      <td>{{ prod.id }}</td>
+      <td>{{ prod.name }}</td>
+      <td>
+        <img
+          src="assets/images/{{ prod.photo }}"
+          width="100px"
+          height="120px"
+          alt=""
+        />
+      </td>
+      <td>{{ prod.price }}</td>
+      <td>{{ prod.quantity }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,44 @@
+<h2>Invoice info</h2>
+id: {{ invoice.id }}
+<br />
+name: {{ invoice.name }}
+<br />
+payment: {{ invoice.payment }}
+<hr />
+<h2>Customer info</h2>
+ID: {{ invoice.customer.id }}
+<br />
+NAME: {{ invoice.customer.name }}
+<br />
+Address: {{ invoice.customer.address }}
+
+<h3>Products list</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Photo</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (prod of invoice.products; track prod.id) {
+    <tr>
+      <td>{{ prod.id }}</td>
+      <td>{{ prod.name }}</td>
+      <td>
+        <img
+          src="assets/images/{{ prod.photo }}"
+          width="100px"
+          height="120px"
+          alt=""
+        />
+      </td>
+      <td>{{ prod.price }}</td>
+      <td>{{ prod.quantity }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

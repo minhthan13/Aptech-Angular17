@@ -1,0 +1,98 @@
+<h3>Change Event</h3>
+
+Category
+<select (change)="SelectCategory($event)">
+  <option value="1">Category 1</option>
+  <option value="2">Category 2</option>
+  <option value="3">Category 3</option>
+  <option value="4">Category 4</option>
+  <option value="5">Category 5</option>
+</select>
+
+<hr />
+<br />
+<img src="assets/images/{{ coutry.flag }}" width="150" height="150" alt="" />
+<hr />
+id:{{ coutry.id }}
+<br />
+name: {{ coutry.name }}
+<br />
+area: {{ coutry.area }}
+<hr />
+<hr />
+Coutries
+<select (change)="SelectCountry($event)">
+  @for (country of countries; track country) {
+  <option value="{{ country.id }}">{{ country.name }}</option>
+  }
+</select>
+<hr />
+<h3>country</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (city of coutry.cities; track city.id) {
+    <tr>
+      <td>{{ city.id }}</td>
+      <td>{{ city.name }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+<hr />
+city
+<select>
+  @for (city of coutry.cities; track city.id) {
+  <option value="{{ city.id }}">{{ city.name }}</option>
+  }
+</select>
+<br />
+<br />file <input type="file" (change)="selectFile($event)" />
+<br />
+@if(fileInfo && fileInfo!=null){
+<br />name: {{ fileInfo.name }} <br />size: {{ fileInfo.size }} <br />Type:
+{{ fileInfo.type }}
+}
+
+<hr />
+multiple file
+<input type="file" multiple (change)="selectFiles($event)" />
+<br />
+@if(filesInfo && filesInfo!=null){ @for (file of filesInfo; track file) {
+
+<br />name: {{ file.name }} <br />size: {{ file.size }} <br />Type:
+{{ file.type }}
+<br />
+<hr />
+} }
+
+<br />
+<br />
+<input
+  type="radio"
+  value="m"
+  name="gender"
+  checked
+  (change)="SelectGender($event)"
+/>Male
+<input
+  type="radio"
+  name="gender"
+  value="f"
+  (change)="SelectGender($event)"
+/>Female
+<hr />
+<input type="text" [(ngModel)]="inputC" />
+<br />
+<input type="radio" value="ctof" name="type" (change)="changeType($event)" />C
+to F
+<input type="radio" value="ftoc" name="type" (change)="changeType($event)" />F
+to C
+
+<br />
+{{ result }}

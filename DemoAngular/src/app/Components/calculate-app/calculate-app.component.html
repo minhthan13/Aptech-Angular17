@@ -1,0 +1,24 @@
+<p>calculate-app works!</p>
+<button (click)="start()">Start Subtraction</button>
+
+<input type="text" [(ngModel)]="num1" /> -
+<input type="text" [(ngModel)]="num2" /> =
+<button (click)="CheckSubtraction($event)">0</button>
+<button (click)="CheckSubtraction($event)" value="1">1</button
+><button (click)="CheckSubtraction($event)" value="2">2</button
+><button (click)="CheckSubtraction($event)" value="3">3</button
+><button (click)="CheckSubtraction($event)" value="4">4</button
+><button (click)="CheckSubtraction($event)" value="5">5</button
+><button (click)="CheckSubtraction($event)" value="6">6</button
+><button (click)="CheckSubtraction($event)" value="7">7</button
+><button (click)="CheckSubtraction($event)" value="8">8</button
+><button (click)="CheckSubtraction($event)" value="9">9</button
+><button (click)="CheckSubtraction($event)" value="10">10</button>
+<br />
+<span>Result: {{ resultTest }}</span>
+<br />
+<hr />
+Your have <input type="text" [(ngModel)]="countCorrect" /> Correct -
+<input type="text" [(ngModel)]="countIncorrect" /> incorrect
+<br />
+you <input type="text" [(ngModel)]="Percentcorrect" /> percent

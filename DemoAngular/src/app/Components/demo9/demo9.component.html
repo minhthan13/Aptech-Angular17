@@ -1,0 +1,84 @@
+<p>demo9 works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+  <table>
+    <tbody>
+      <tr>
+        <td>username</td>
+        <td>
+          <input type="text" formControlName="username" />
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="text" formControlName="password" />
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <textarea formControlName="description" cols="20" rows="5"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          <input type="radio" value="m" formControlName="gender" />Male |
+          <input type="radio" value="f" formControlName="gender" />Female
+        </td>
+      </tr>
+
+      <tr>
+        <td>cert</td>
+        <td>
+          @for(cert of certs;track cert){
+          <input
+            type="radio"
+            formControlName="certId"
+            value="{{ cert.id }}"
+          />{{ cert.name }}
+          <br />
+          }
+        </td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>
+          <input type="checkbox" formControlName="status" />
+        </td>
+      </tr>
+      <tr>
+        <td>Roles</td>
+        <td>
+          <select formControlName="roleId">
+            @for (role of roles; track role) {
+            <option value="{{ role.id }}">{{ role.name }}</option>
+            }
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Photo</td>
+        <td>
+          <input type="file" (change)="selectPhoto($event)" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Address:</td>
+        <td formGroupName="address">
+          Street <input type="text" formControlName="street" /> <br /><br />
+          Ward <input type="text" formControlName="ward" />
+        </td>
+      </tr>
+      <!-- ============= -->
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <button type="submit">Save</button>
+          <input type="hidden" formControlName="id" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
