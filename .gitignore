@@ -2,6 +2,8 @@
 
 # Compiled output
 **/dist/
+**/assets/dist/
+**/assets/plugins/
 **/tmp/
 **/out-tsc/
 **/bazel-out/
