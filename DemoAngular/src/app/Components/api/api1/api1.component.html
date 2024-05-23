@@ -1,0 +1,25 @@
+<h3>Categories</h3>
+<fieldset>
+  <legend>Search by KeyWord</legend>
+  KeyWord: <input type="text" [(ngModel)]="keyword" />
+  <br />
+  <button type="button" (click)="search()">Search</button>
+</fieldset>
+@if(categories && categories.length>0){
+<table border="1">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (cate of categories; track cate) {
+    <tr>
+      <td>{{ cate.id }}</td>
+      <td>{{ cate.name }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}

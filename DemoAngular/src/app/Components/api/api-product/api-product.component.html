@@ -1,0 +1,37 @@
+<h3>Product List</h3>
+@if(products && products.length >0){
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Created</th>
+      <th>Photo</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>CategoryId</th>
+      <th>Category Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(p of products; track p){
+    <tr>
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.description }}</td>
+      <td>{{ p.status ? "Show" : "Hide" }}</td>
+      <td>{{ p.created }}</td>
+      <td>
+        <img src="assets/images/{{ p.photo }}" width="120" height="100" />
+      </td>
+      <td>{{ p.price }}</td>
+      <td>{{ p.quantity }}</td>
+      <td>{{ p.categoryId }}</td>
+      <td>{{ p.categoryName }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
