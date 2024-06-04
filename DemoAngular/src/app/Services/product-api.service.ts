@@ -12,4 +12,7 @@ export class ProductApiService {
   async findAll() {
     return lastValueFrom(this.httpClient.get(this.baseUrl + '/getallproduct'));
   }
+  async findId(id: string) {
+    return lastValueFrom(this.httpClient.get(this.baseUrl + '/find/' + id));
+  }
 }

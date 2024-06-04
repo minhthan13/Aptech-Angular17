@@ -1,0 +1,6 @@
+<h3>Add category</h3>
+<form [formGroup]="addForm" (ngSubmit)="save()">
+  Name <input type="text" formControlName="name" />
+  <br />
+  <button type="submit">Save</button>
+</form>

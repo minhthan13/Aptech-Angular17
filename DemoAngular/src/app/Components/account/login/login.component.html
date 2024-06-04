@@ -1,0 +1,19 @@
+<p>login</p>
+<br />
+{{ msg }}
+<br />
+<form [formGroup]="formLogin" (ngSubmit)="Login()">
+  <label for="">username</label>
+  <input type="text" formControlName="username" />
+  <br />
+  <label for="">Password</label>
+  <input type="text" formControlName="password" />
+  <br />
+  <br />
+  <button type="submit">Login</button> |
+  <button type="button" (click)="Clear($event)">Clear</button>
+</form>
+<label for="">Username</label>
+<hr />
+<br />
+<a [routerLink]="['/register-api']">Resgister</a>

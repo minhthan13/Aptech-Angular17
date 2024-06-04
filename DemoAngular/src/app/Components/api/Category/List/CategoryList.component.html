@@ -5,19 +5,33 @@
   <br />
   <button type="button" (click)="search()">Search</button>
 </fieldset>
+<hr />
+<a [routerLink]="['/add-category']">Add</a>
+<hr />
 @if(categories && categories.length>0){
 <table border="1">
   <thead>
     <tr>
       <th>id</th>
       <th>name</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
     @for (cate of categories; track cate) {
     <tr>
       <td>{{ cate.id }}</td>
-      <td>{{ cate.name }}</td>
+      <td>
+        <a [routerLink]="['/category-details', { id: cate.id }]">
+          {{ cate.name }}</a
+        >
+      </td>
+      <td>
+        <button type="button" (click)="Delete(cate.id)">Delete</button><br />
+      </td>
+      <td>
+        <a [routerLink]="['/edit-category', { id: cate.id }]">Edit</a><br />
+      </td>
     </tr>
     }
   </tbody>

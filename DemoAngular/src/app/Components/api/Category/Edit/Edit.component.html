@@ -1,0 +1,10 @@
+<h3>Add category</h3>
+@if(editForm){
+
+<form [formGroup]="editForm" (ngSubmit)="save()">
+  <input type="hidden" formControlName="id" />
+  Name <input type="text" formControlName="name" />
+  <br />
+  <button type="submit">Save</button>
+</form>
+}

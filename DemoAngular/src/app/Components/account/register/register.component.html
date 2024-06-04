@@ -1,0 +1,50 @@
+<h2>Register</h2>
+
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+  <table>
+    <tbody>
+      <tr>
+        <td>username</td>
+        <td>
+          <input
+            type="text"
+            formControlName="username"
+            class="ng-untouched ng-valid"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="text" formControlName="password" />
+        </td>
+      </tr>
+      <tr>
+        <td>FullName</td>
+        <td>
+          <input type="text" formControlName="fullName" />
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="text" formControlName="email" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>date of birth</td>
+        <td>
+          <input type="text" formControlName="dob" />
+        </td>
+      </tr>
+      <!-- ============= -->
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <button type="submit" [disabled]="registerForm.invalid">Save</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

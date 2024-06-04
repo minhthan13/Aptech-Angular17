@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ProductApi } from 'src/app/entities/product_api.entity';
 import { ProductApiService } from 'src/app/Services/product-api.service';
 
 @Component({
   selector: 'app-api-product',
   standalone: true,
-  imports: [],
-  templateUrl: './api-product.component.html',
+  imports: [RouterLink],
+  templateUrl: './products.component.html',
 })
-export class ApiProductComponent implements OnInit {
+export class ProductsComponent implements OnInit {
   products: ProductApi[];
   constructor(private productApiService: ProductApiService) {}
   ngOnInit(): void {

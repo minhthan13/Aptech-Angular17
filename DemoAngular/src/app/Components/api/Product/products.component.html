@@ -19,7 +19,11 @@
     @for(p of products; track p){
     <tr>
       <td>{{ p.id }}</td>
-      <td>{{ p.name }}</td>
+      <td>
+        <a [routerLink]="['/product-api-detail', { id: p.id }]">
+          {{ p.name }}</a
+        >
+      </td>
       <td>{{ p.description }}</td>
       <td>{{ p.status ? "Show" : "Hide" }}</td>
       <td>{{ p.created }}</td>

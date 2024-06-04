@@ -1,0 +1,45 @@
+<h2>Product Details</h2>
+@if(product){
+<table border="1">
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>{{ product.id }}</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>{{ product.description }}</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>{{ product.status ? "Show" : "Hide" }}</td>
+    </tr>
+    <tr>
+      <td>Created</td>
+      <td>{{ product.created }}</td>
+    </tr>
+    <tr>
+      <td>IMG</td>
+      <td>
+        <img src="{{ product.photo }}" width="120" height="100" />
+      </td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>{{ product.price }}</td>
+    </tr>
+    <tr>
+      <td>Quantity</td>
+      <td>{{ product.quantity }}</td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>{{ product.categoryName }}</td>
+    </tr>
+  </tbody>
+</table>
+}
