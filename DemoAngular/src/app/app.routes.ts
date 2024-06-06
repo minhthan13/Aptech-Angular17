@@ -20,6 +20,9 @@ import { LoginAPIComponent } from './Components/account/login/login.component';
 import { RegisterAPIComponent } from './Components/account/register/register.component';
 import { WelcomeAPIComponent } from './Components/account/welcome/welcome.component';
 import { ProfileAPIComponent } from './Components/account/profile/profile.component';
+import { UploadFileComponent } from './Components/api/Product/upload-file/upload-file.component';
+import { AddProductComponent } from './Components/api/Product/Add/Add.component';
+import { EditProductComponent } from './Components/api/Product/Edit/Edit.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/categories', pathMatch: 'full' },
@@ -36,7 +39,7 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'news', component: NewsComponent },
-  { path: 'products', component: Demo6Component },
+  // { path: 'products', component: Demo6Component },
   { path: 'product-detail', component: ProductDetailComponent },
   {
     path: 'contact',
@@ -53,4 +56,7 @@ export const routes: Routes = [
   { path: 'register-api', component: RegisterAPIComponent },
   { path: 'welcome-api', component: WelcomeAPIComponent },
   { path: 'profile-api', component: ProfileAPIComponent },
+  { path: 'upload-file-api', component: UploadFileComponent },
+  { path: 'add-product', component: AddProductComponent },
+  { path: 'edit-product', component: EditProductComponent },
 ];

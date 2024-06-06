@@ -6,7 +6,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { error } from 'console';
 import { AccountDTO } from 'src/app/entities/accountDTO.entities';
 import { AccountAPIService } from 'src/app/Services/Account-API.Service';
 
@@ -19,11 +18,13 @@ import { AccountAPIService } from 'src/app/Services/Account-API.Service';
   host: { 'collision-id': 'LoginAPIComponent' },
 })
 export class LoginAPIComponent implements OnInit {
-  router = inject(Router);
-  formBuilder = inject(FormBuilder);
-  accountApiService = inject(AccountAPIService);
   formLogin: FormGroup;
 
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private accountApiService: AccountAPIService
+  ) {}
   msg: string;
   ngOnInit(): void {
     this.formLogin = this.formBuilder.group({

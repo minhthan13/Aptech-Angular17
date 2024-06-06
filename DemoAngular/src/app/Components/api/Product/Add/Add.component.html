@@ -1,0 +1,69 @@
+<form [formGroup]="addForm" (ngSubmit)="save()">
+  <table>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" formControlName="name" />
+        </td>
+      </tr>
+      <tr>
+        <td>price</td>
+        <td>
+          <input type="text" formControlName="price" />
+        </td>
+      </tr>
+      <tr>
+        <td>quantity</td>
+        <td>
+          <input type="text" formControlName="quantity" />
+        </td>
+      </tr>
+      <tr>
+        <td>description</td>
+        <td>
+          <input type="text" formControlName="description" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>created</td>
+        <td>
+          <input type="text" formControlName="created" />
+        </td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>
+          <input type="checkbox" formControlName="status" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>photo</td>
+        <td>
+          <input type="file" (change)="fileselected($event)" />
+        </td>
+      </tr>
+      <tr>
+        <td>category</td>
+        <td>
+          @if(categories!=null){
+          <select formControlName="categoryId">
+            @for (cate of categories; track cate) {
+            <option value="{{ cate.id }}">{{ cate.name }}</option>
+            }
+          </select>
+          }
+        </td>
+      </tr>
+      <!-- ============= -->
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <button type="submit">Save</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

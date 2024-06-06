@@ -1,0 +1,7 @@
+<p>upload-file works!</p>
+<form (ngSubmit)="upload()">
+  FIle <input type="file" (change)="selectedFile($event)" accept="image/*" />
+  <br />
+  <br />
+  <button type="submit" (click)="upload()">upload</button>
+</form>
