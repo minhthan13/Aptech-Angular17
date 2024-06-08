@@ -10,12 +10,21 @@ import {
 import { SearchComponent } from './components/layouts/search/search.component';
 import { CarouselSlideComponent } from './components/layouts/carousel-slide/carousel-slide.component';
 import { filter, take } from 'rxjs';
+import { CategorySidebarComponent } from './components/sidebar/category/category.component';
+import { ThumnailsComponent } from './components/sidebar/thumnails/thumnails.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [RouterOutlet, RouterLink, SearchComponent, CarouselSlideComponent],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    SearchComponent,
+    CarouselSlideComponent,
+    CategorySidebarComponent,
+    ThumnailsComponent,
+  ],
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}

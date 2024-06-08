@@ -1,0 +1,34 @@
+<br />
+@if(productsLatest && productsLatest.length>0){ @for (product of productsLatest;
+track product) {
+
+<div class="thumbnail">
+  <img
+    src="assets/themes/images/products/panasonic.jpg"
+    alt="Bootshop panasonoc New camera"
+  />
+  <div class="caption">
+    <h5>{{ product.name }}</h5>
+    <h4 style="text-align: center">
+      <a class="btn" [routerLink]="['/product-detail']">
+        <i class="icon-zoom-in"></i
+      ></a>
+      <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a>
+      <a class="btn btn-primary" href="#">{{ product.price | currency }}</a>
+    </h4>
+  </div>
+</div>
+<br />
+} }
+
+<br />
+<div class="thumbnail">
+  <img
+    src="assets/themes/images/payment_methods.png"
+    title="Bootshop Payment Methods"
+    alt="Payments Methods"
+  />
+  <div class="caption">
+    <h5>Payment Methods</h5>
+  </div>
+</div>

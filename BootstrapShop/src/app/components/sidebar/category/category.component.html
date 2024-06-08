@@ -1,0 +1,8 @@
+<ul id="sideManu" class="nav nav-tabs nav-stacked">
+  @if(categories && categories.length>0){ @for (cate of categories; track cate)
+  {
+  <li>
+    <a [routerLink]="['/categories']">{{ cate.name }}</a>
+  </li>
+  } }
+</ul>
