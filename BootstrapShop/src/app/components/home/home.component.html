@@ -265,7 +265,7 @@
 
   <li class="span3">
     <div class="thumbnail">
-      <a href="product_details.html"
+      <a [routerLink]="['/product-detail', { id: product.id }]"
         ><img src="assets/themes/images/products/6.jpg" alt=""
       /></a>
       <div class="caption">
@@ -273,15 +273,20 @@
         <p>{{ product.description }}</p>
 
         <h4 style="text-align: center">
-          <a class="btn" href="product_details.html">
+          <a class="btn" [routerLink]="['/product-detail', { id: product.id }]">
             <i class="icon-zoom-in"></i
           ></a>
-          <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a>
-          <a class="btn btn-primary" href="#">{{ product.price | currency }}</a>
+          <a class="btn btn-primary"
+            >Add to <i class="icon-shopping-cart"></i
+          ></a>
+          <a
+            class="btn btn-primary"
+            [routerLink]="['/product-detail', { id: product.id }]"
+            >{{ product.price | currency }}</a
+          >
         </h4>
       </div>
     </div>
   </li>
-
   } }
 </ul>

@@ -2,7 +2,7 @@
   @if(categories && categories.length>0){ @for (cate of categories; track cate)
   {
   <li>
-    <a [routerLink]="['/categories']">{{ cate.name }}</a>
+    <a [routerLink]="['/categories', { id: cate.id }]">{{ cate.name }}</a>
   </li>
   } }
 </ul>

@@ -1,29 +1,15 @@
 <ul class="breadcrumb">
   <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-  <li class="active">Products Name</li>
+  <li class="active">category</li>
 </ul>
 <h3>
-  Products Name <small class="pull-right"> 40 products are available </small>
+  Category
+  <small class="pull-right">
+    {{ products ? products.length : "0" }} products are available
+  </small>
 </h3>
 <hr class="soft" />
-<p>
-  Nowadays the lingerie industry is one of the most successful business
-  spheres.We always stay in touch with the latest fashion tendencies - that is
-  why our goods are so popular and we have a great number of faithful customers
-  all over the country.
-</p>
-<hr class="soft" />
-<form class="form-horizontal span6">
-  <div class="control-group">
-    <label class="control-label alignL">Sort By </label>
-    <select>
-      <option>Priduct name A - Z</option>
-      <option>Priduct name Z - A</option>
-      <option>Priduct Stoke</option>
-      <option>Price Lowest first</option>
-    </select>
-  </div>
-</form>
+<!-- List view -->
 
 <div id="myTab" class="pull-right">
   <a href="#listView" data-toggle="tab"
@@ -36,6 +22,9 @@
 <br class="clr" />
 <div class="tab-content">
   <div class="tab-pane" id="listView">
+    <hr class="soft" />
+    @if(products && products.length>0){ @for (product of products; track
+    product) {
     <div class="row">
       <div class="span2">
         <img src="assets/themes/images/products/3.jpg" alt="" />
@@ -43,357 +32,77 @@
       <div class="span4">
         <h3>New | Available</h3>
         <hr class="soft" />
-        <h5>Product Name</h5>
+        <h5>{{ product.name }}</h5>
         <p>
-          Nowadays the lingerie industry is one of the most successful business
-          spheres.We always stay in touch with the latest fashion tendencies -
-          that is why our goods are so popular..
+          {{ product.description }}
         </p>
-        <a class="btn btn-small pull-right" [routerLink]="['/product-detail']"
+        <a
+          class="btn btn-small pull-right"
+          [routerLink]="['/product-detail', { id: product.id }]"
           >View Details</a
         >
         <br class="clr" />
       </div>
       <div class="span3 alignR">
         <form class="form-horizontal qtyFrm">
-          <h3>$140.00</h3>
-          <label class="checkbox">
-            <input type="checkbox" /> Adds product to compair </label
-          ><br />
+          <h3>{{ product.price | currency }}</h3>
+
+          <br />
 
           <a
-            [routerLink]="['/product-detail']"
+            [routerLink]="['/product-detail', { id: product.id }]"
             class="btn btn-large btn-primary"
           >
             Add to <i class="icon-shopping-cart"></i
           ></a>
-          <a [routerLink]="['/product-detail']" class="btn btn-large"
+          <a
+            [routerLink]="['/product-detail', { id: product.id }]"
+            class="btn btn-large"
             ><i class="icon-zoom-in"></i
           ></a>
         </form>
       </div>
     </div>
     <hr class="soft" />
-    <div class="row">
-      <div class="span2">
-        <img src="assets/themes/images/products/1.jpg" alt="" />
-      </div>
-      <div class="span4">
-        <h3>New | Available</h3>
-        <hr class="soft" />
-        <h5>Product Name</h5>
-        <p>
-          Nowadays the lingerie industry is one of the most successful business
-          spheres.We always stay in touch with the latest fashion tendencies -
-          that is why our goods are so popular..
-        </p>
-        <a class="btn btn-small pull-right" [routerLink]="['/product-detail']"
-          >View Details</a
-        >
-        <br class="clr" />
-      </div>
-      <div class="span3 alignR">
-        <form class="form-horizontal qtyFrm">
-          <h3>$140.00</h3>
-          <label class="checkbox">
-            <input type="checkbox" /> Adds product to compair </label
-          ><br />
-
-          <a
-            [routerLink]="['/product-detail']"
-            class="btn btn-large btn-primary"
-          >
-            Add to <i class="icon-shopping-cart"></i
-          ></a>
-          <a [routerLink]="['/product-detail']" class="btn btn-large"
-            ><i class="icon-zoom-in"></i
-          ></a>
-        </form>
-      </div>
-    </div>
-    <hr class="soft" />
-    <div class="row">
-      <div class="span2">
-        <img src="assets/themes/images/products/3.jpg" alt="" />
-      </div>
-      <div class="span4">
-        <h3>New | Available</h3>
-        <hr class="soft" />
-        <h5>Product Name</h5>
-        <p>
-          Nowadays the lingerie industry is one of the most successful business
-          spheres.We always stay in touch with the latest fashion tendencies -
-          that is why our goods are so popular..
-        </p>
-        <a class="btn btn-small pull-right" [routerLink]="['/product-detail']"
-          >View Details</a
-        >
-        <br class="clr" />
-      </div>
-      <div class="span3 alignR">
-        <form class="form-horizontal qtyFrm">
-          <h3>$140.00</h3>
-          <label class="checkbox">
-            <input type="checkbox" /> Adds product to compair </label
-          ><br />
-
-          <a
-            [routerLink]="['/product-detail']"
-            class="btn btn-large btn-primary"
-          >
-            Add to <i class="icon-shopping-cart"></i
-          ></a>
-          <a [routerLink]="['/product-detail']" class="btn btn-large"
-            ><i class="icon-zoom-in"></i
-          ></a>
-        </form>
-      </div>
-    </div>
-    <hr class="soft" />
-    <div class="row">
-      <div class="span2">
-        <img src="assets/themes/images/products/3.jpg" alt="" />
-      </div>
-      <div class="span4">
-        <h3>New | Available</h3>
-        <hr class="soft" />
-        <h5>Product Name</h5>
-        <p>
-          Nowadays the lingerie industry is one of the most successful business
-          spheres.We always stay in touch with the latest fashion tendencies -
-          that is why our goods are so popular..
-        </p>
-        <a class="btn btn-small pull-right" [routerLink]="['/product-detail']"
-          >View Details</a
-        >
-        <br class="clr" />
-      </div>
-      <div class="span3 alignR">
-        <form class="form-horizontal qtyFrm">
-          <h3>$140.00</h3>
-          <label class="checkbox">
-            <input type="checkbox" /> Adds product to compair </label
-          ><br />
-
-          <a
-            [routerLink]="['/product-detail']"
-            class="btn btn-large btn-primary"
-          >
-            Add to <i class="icon-shopping-cart"></i
-          ></a>
-          <a [routerLink]="['/product-detail']" class="btn btn-large"
-            ><i class="icon-zoom-in"></i
-          ></a>
-        </form>
-      </div>
-    </div>
-
-    <hr class="soft" />
-    <div class="row">
-      <div class="span2">
-        <img src="assets/themes/images/products/3.jpg" alt="" />
-      </div>
-      <div class="span4">
-        <h3>New | Available</h3>
-        <hr class="soft" />
-        <h5>Product Name</h5>
-        <p>
-          Nowadays the lingerie industry is one of the most successful business
-          spheres.We always stay in touch with the latest fashion tendencies -
-          that is why our goods are so popular..
-        </p>
-        <a class="btn btn-small pull-right" [routerLink]="['/product-detail']"
-          >View Details</a
-        >
-        <br class="clr" />
-      </div>
-      <div class="span3 alignR">
-        <form class="form-horizontal qtyFrm">
-          <h3>$140.00</h3>
-          <label class="checkbox">
-            <input type="checkbox" /> Adds product to compair </label
-          ><br />
-          <a
-            [routerLink]="['/product-detail']"
-            class="btn btn-large btn-primary"
-          >
-            Add to <i class="icon-shopping-cart"></i
-          ></a>
-          <a [routerLink]="['/product-detail']" class="btn btn-large"
-            ><i class="icon-zoom-in"></i
-          ></a>
-        </form>
-      </div>
-    </div>
-    <hr class="soft" />
-    <div class="row">
-      <div class="span2">
-        <img src="assets/themes/images/products/3.jpg" alt="" />
-      </div>
-      <div class="span4">
-        <h3>New | Available</h3>
-        <hr class="soft" />
-        <h5>Product Name</h5>
-        <p>
-          Nowadays the lingerie industry is one of the most successful business
-          spheres.We always stay in touch with the latest fashion tendencies -
-          that is why our goods are so popular..
-        </p>
-        <a class="btn btn-small pull-right" [routerLink]="['/product-detail']"
-          >View Details</a
-        >
-        <br class="clr" />
-      </div>
-      <div class="span3 alignR">
-        <form class="form-horizontal qtyFrm">
-          <h3>$140.00</h3>
-          <label class="checkbox">
-            <input type="checkbox" /> Adds product to compair </label
-          ><br />
-
-          <a
-            [routerLink]="['/product-detail']"
-            class="btn btn-large btn-primary"
-          >
-            Add to <i class="icon-shopping-cart"></i
-          ></a>
-          <a [routerLink]="['/product-detail']" class="btn btn-large"
-            ><i class="icon-zoom-in"></i
-          ></a>
-        </form>
-      </div>
-    </div>
-    <hr class="soft" />
+    } }
   </div>
-
+  <!-- Block View -->
   <div class="tab-pane active" id="blockView">
+    <hr class="soft" />
     <ul class="thumbnails">
+      @if(products){ @for (product of products; track product) {
       <li class="span3">
         <div class="thumbnail">
-          <a [routerLink]="['/product-detail']"
+          <a [routerLink]="['/product-detail', { id: product.id }]"
             ><img src="assets/themes/images/products/3.jpg" alt=""
           /></a>
           <div class="caption">
-            <h5>Manicure &amp; Pedicure</h5>
-            <p>I'm a paragraph. Click here</p>
+            <h5>{{ product.name }}</h5>
+            <p>{{ product.description }}</p>
             <h4 style="text-align: center">
-              <a class="btn" [routerLink]="['/product-detail']">
+              <a
+                class="btn"
+                [routerLink]="['/product-detail', { id: product.id }]"
+              >
                 <i class="icon-zoom-in"></i
               ></a>
               <a class="btn" href="#"
                 >Add to <i class="icon-shopping-cart"></i
               ></a>
-              <a class="btn btn-primary" href="#">&euro;222.00</a>
+              <a class="btn btn-primary" href="#">{{
+                product.price | currency
+              }}</a>
             </h4>
           </div>
         </div>
       </li>
-      <li class="span3">
-        <div class="thumbnail">
-          <a [routerLink]="['/product-detail']"
-            ><img src="assets/themes/images/products/3.jpg" alt=""
-          /></a>
-          <div class="caption">
-            <h5>Manicure &amp; Pedicure</h5>
-            <p>I'm a paragraph. Click here</p>
-            <h4 style="text-align: center">
-              <a class="btn" [routerLink]="['/product-detail']">
-                <i class="icon-zoom-in"></i
-              ></a>
-              <a class="btn" href="#"
-                >Add to <i class="icon-shopping-cart"></i
-              ></a>
-              <a class="btn btn-primary" href="#">&euro;222.00</a>
-            </h4>
-          </div>
-        </div>
-      </li>
-      <li class="span3">
-        <div class="thumbnail">
-          <a [routerLink]="['/product-detail']"
-            ><img src="assets/themes/images/products/3.jpg" alt=""
-          /></a>
-          <div class="caption">
-            <h5>Manicure &amp; Pedicure</h5>
-            <p>I'm a paragraph. Click here</p>
-            <h4 style="text-align: center">
-              <a class="btn" [routerLink]="['/product-detail']">
-                <i class="icon-zoom-in"></i
-              ></a>
-              <a class="btn" href="#"
-                >Add to <i class="icon-shopping-cart"></i
-              ></a>
-              <a class="btn btn-primary" href="#">&euro;222.00</a>
-            </h4>
-          </div>
-        </div>
-      </li>
-      <li class="span3">
-        <div class="thumbnail">
-          <a [routerLink]="['/product-detail']"
-            ><img src="assets/themes/images/products/3.jpg" alt=""
-          /></a>
-          <div class="caption">
-            <h5>Manicure &amp; Pedicure</h5>
-            <p>I'm a paragraph. Click here</p>
-            <h4 style="text-align: center">
-              <a class="btn" [routerLink]="['/product-detail']">
-                <i class="icon-zoom-in"></i
-              ></a>
-              <a class="btn" href="#"
-                >Add to <i class="icon-shopping-cart"></i
-              ></a>
-              <a class="btn btn-primary" href="#">&euro;222.00</a>
-            </h4>
-          </div>
-        </div>
-      </li>
-      <li class="span3">
-        <div class="thumbnail">
-          <a [routerLink]="['/product-detail']"
-            ><img src="assets/themes/images/products/3.jpg" alt=""
-          /></a>
-          <div class="caption">
-            <h5>Manicure &amp; Pedicure</h5>
-            <p>I'm a paragraph. Click here</p>
-            <h4 style="text-align: center">
-              <a class="btn" [routerLink]="['/product-detail']">
-                <i class="icon-zoom-in"></i
-              ></a>
-              <a class="btn" href="#"
-                >Add to <i class="icon-shopping-cart"></i
-              ></a>
-              <a class="btn btn-primary" href="#">&euro;222.00</a>
-            </h4>
-          </div>
-        </div>
-      </li>
-      <li class="span3">
-        <div class="thumbnail">
-          <a [routerLink]="['/product-detail']"
-            ><img src="assets/themes/images/products/3.jpg" alt=""
-          /></a>
-          <div class="caption">
-            <h5>Manicure &amp; Pedicure</h5>
-            <p>I'm a paragraph. Click here</p>
-            <h4 style="text-align: center">
-              <a class="btn" [routerLink]="['/product-detail']">
-                <i class="icon-zoom-in"></i
-              ></a>
-              <a class="btn" href="#"
-                >Add to <i class="icon-shopping-cart"></i
-              ></a>
-              <a class="btn btn-primary" href="#">&euro;222.00</a>
-            </h4>
-          </div>
-        </div>
-      </li>
+      } }
     </ul>
     <hr class="soft" />
   </div>
 </div>
+<hr class="soft" />
 
-<a href="compair.html" class="btn btn-large pull-right">Compair Product</a>
 <div class="pagination">
   <ul>
     <li><a href="#">&lsaquo;</a></li>
@@ -405,4 +114,5 @@
     <li><a href="#">&rsaquo;</a></li>
   </ul>
 </div>
+
 <br class="clr" />

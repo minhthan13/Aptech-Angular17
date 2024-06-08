@@ -1,6 +1,10 @@
 <form class="form-inline navbar-search" method="post" action="products.html">
   <input id="srchFld" class="srchTxt" type="text" />
-  <select class="srchTxt">
+  <select
+    class="srchTxt"
+    [formControl]="CateModel"
+    (change)="GetProductCategory()"
+  >
     <option value="-1">All</option>
     @if(categories && categories.length>0){ @for (cate of categories; track
     cate) {

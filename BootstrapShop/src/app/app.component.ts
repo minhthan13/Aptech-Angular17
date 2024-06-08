@@ -43,7 +43,6 @@ export class AppComponent implements OnInit {
           route = route.firstChild;
         }
         this.childData = route.snapshot.data['isHome'] ??= '';
-        console.log(`check data: ${this.childData}`);
         //==============//
         // plan 2:  check endpoint
         this.isHomepage = event.url === '/home' || event.url === '/';
