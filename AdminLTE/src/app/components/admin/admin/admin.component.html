@@ -226,7 +226,7 @@
             />
           </div>
           <div class="info">
-            <a [routerLink]="['/admin']" class="d-block">Alexander Pierce</a>
+            <a [routerLink]="['/admin']" class="d-block">{{ username }}</a>
           </div>
         </div>
 
@@ -258,7 +258,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-            <!-- Form -->
+            <!-- Product Sidebar -->
             <li class="nav-item">
               <a class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
@@ -278,6 +278,30 @@
                   <a [routerLink]="['./products']" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>LIST PRODUCT</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Category Sidebar -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Category
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a [routerLink]="['./add-category']" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ADD Category</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a [routerLink]="['./categories']" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>LIST Category</p>
                   </a>
                 </li>
               </ul>
